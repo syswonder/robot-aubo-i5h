@@ -1,0 +1,24 @@
+manifestVersion: 1
+
+build: bash scripts/build.sh
+start: bash scripts/start.sh
+
+package:
+  name: robonix.primitive.aubo.i5h.arm
+  version: 0.1.0
+  description: AUBO ARCS feedback and bounded point-to-point arm commands.
+  tags: 
+    - primitive
+    - aubo
+    - i5h
+    - arm
+  maintainers:
+    - Yuzheng Gao <2300013159@stuu.pku.edu.cn>
+  license: Apache-2.0
+
+capabilities:
+  - name: robonix/primitive/arm/joint_states
+  - name: robonix/primitive/arm/end_pose
+  - name: robonix/primitive/arm/joint_command
+  - name: robonix/primitive/arm/pos_command
+depends: []

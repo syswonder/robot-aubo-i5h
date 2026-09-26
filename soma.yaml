@@ -1,0 +1,35 @@
+urdf:
+  path: ./model/aubo_i5H.urdf
+  root_link: base_link
+  model_name: aubo_i5H
+robot:
+  id: aubo_i5h_rob1
+  display_name: AUBO i5H
+  family: manipulator
+  root_part: arm
+  exports: []
+  components:
+    - id: arm
+      type: manipulator
+      urdf_link: base_link
+      exports:
+        - provider_id: aubo_arm
+          capabilities:
+            - path: robonix/primitive/arm/joint_states
+            - path: robonix/primitive/arm/end_pose
+      components:
+        - {id: shoulder, type: joint, urdf_joint: shoulder_joint, exports: []}
+        - {id: upper_arm, type: joint, urdf_joint: upperArm_joint, exports: []}
+        - {id: forearm, type: joint, urdf_joint: foreArm_joint, exports: []}
+        - {id: wrist1, type: joint, urdf_joint: wrist1_joint, exports: []}
+        - {id: wrist2, type: joint, urdf_joint: wrist2_joint, exports: []}
+        - {id: wrist3, type: joint, urdf_joint: wrist3_joint, exports: []}
+        - {id: tcp, type: body_part, urdf_link: tool0, exports: []}
+description:
+  summary: AUBO i5H with controller-calibrated kinematics and official vendor meshes.
+  notes:
+    - TCP pose is expressed in controller base_link, using metres and ROS xyzw quaternions.
+    - State feedback is measured; unavailable effort values remain empty.
+    - The motion deployment additionally registers joint_command and pos_command.
+    - Cartesian targets use controller IK followed by joint interpolation, without straight-line or obstacle-avoidance guarantees.
+    - No gripper or external sensor is configured in this deployment.

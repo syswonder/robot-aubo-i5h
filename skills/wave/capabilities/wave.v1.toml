@@ -1,0 +1,9 @@
+[contract]
+id = "robonix/skill/wave/wave"
+version = "1"
+kind = "skill"
+idl = "wave/srv/Wave.srv"
+description = "Slightly wiggle each arm joint to verify the manipulator is controllable."
+
+[mode]
+type = "rpc"

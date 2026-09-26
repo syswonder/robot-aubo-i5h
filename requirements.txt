@@ -1,0 +1,7 @@
+pyaubo_sdk==0.26.0rc6
+grpcio==1.80.0
+grpcio-tools==1.76.0
+protobuf==6.33.6
+mcp==1.28.1
+fastmcp==3.4.4
+PyYAML>=6,<7

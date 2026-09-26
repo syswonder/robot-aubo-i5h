@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="aubo_i5H">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.000129 0.001249 0.016678" rpy="0 0 0" />
+      <mass value="1.539020" />
+      <inertia ixx="0.003278" ixy="-0.000001" ixz="-0.000001" iyy="0.003017" iyz="-0.000048" izz="0.005841" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/visual/link0.DAE" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/collision/link0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="shoulder_Link">
+    <inertial>
+      <origin xyz="-0.000010 0.001807 -0.013854" rpy="0 0 0" />
+      <mass value="4.848581" />
+      <inertia ixx="0.011842" ixy="-0.000000" ixz="0.000004" iyy="0.011800" iyz="-0.000103" izz="0.008103" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/visual/link1.DAE" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/collision/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="shoulder_joint" type="revolute">
+    <origin xyz="0 -0 0.122" rpy="-0 -0 3.1415926535897931" />
+    <parent link="base_link" />
+    <child link="shoulder_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="133" start_stop="207" velocity="3.892084231947355" />
+    <property inertia="2.0" damping="0" stiffness="0" offset="0" motor_constant="8.72" ratio="121" />
+  </joint>
+  <link name="upperArm_Link">
+    <inertial>
+      <origin xyz="0.204000 0.000000 0.006603" rpy="0 0 0" />
+      <mass value="10.836261" />
+      <inertia ixx="0.026024" ixy="0.000020" ixz="-0.000000" iyy="0.432805" iyz="-0.000000" izz="0.425155" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/visual/link2.DAE" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/collision/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="upperArm_joint" type="revolute">
+    <origin xyz="-0.00019999999494757503 0.12162376991136681 8.5546528067107224e-05" rpy="-8.7055643219879281e-14 -1.5700929567709121 -1.5707963267948095" />
+    <parent link="shoulder_Link" />
+    <child link="upperArm_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="133" start_stop="207" velocity="3.892084231947355" />
+    <property inertia="2.0" damping="0" stiffness="0" offset="0" motor_constant="8.72" ratio="121" />
+  </joint>
+  <link name="foreArm_Link">
+    <inertial>
+      <origin xyz="0.264626 -0.000020 0.093611" rpy="0 0 0" />
+      <mass value="2.849168" />
+      <inertia ixx="0.003634" ixy="0.000007" ixz="0.000168" iyy="0.065327" iyz="0.000002" izz="0.064676" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/visual/link3.DAE" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/collision/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="foreArm_joint" type="revolute">
+    <origin xyz="0.40896849998226387 -2.0181123775116824e-07 0.0001237998323094671" rpy="-3.1399625135869766 0 -0" />
+    <parent link="upperArm_Link" />
+    <child link="foreArm_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="133" start_stop="207" velocity="3.892084231947355" />
+    <property inertia="2.0" damping="0" stiffness="0" offset="0" motor_constant="8.72" ratio="121" />
+  </joint>
+  <link name="wrist1_Link">
+    <inertial>
+      <origin xyz="0.000038 0.011278 -0.001539" rpy="0 0 0" />
+      <mass value="1.628022" />
+      <inertia ixx="0.001951" ixy="0.000003" ixz="0.000001" iyy="0.001154" iyz="-0.000042" izz="0.001931" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/visual/link4.DAE" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/collision/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wrist1_joint" type="revolute">
+    <origin xyz="0.37558639999385923 2.078613338209117e-07 -0.0001237998222991203" rpy="-3.1415926535897931 -0.001679009990766522 1.5707963267948966" />
+    <parent link="foreArm_Link" />
+    <child link="wrist1_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="13.5" start_stop="34" velocity="4.136430327226561" />
+    <property inertia="0.15" damping="0" stiffness="0" offset="0" motor_constant="7.092" ratio="101" />
+  </joint>
+  <link name="wrist2_Link">
+    <inertial>
+      <origin xyz="-0.000038 -0.011278 -0.001539" rpy="0 0 0" />
+      <mass value="1.628022" />
+      <inertia ixx="0.001951" ixy="0.000003" ixz="-0.000001" iyy="0.001154" iyz="0.000042" izz="0.001931" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/visual/link5.DAE" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/collision/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wrist2_joint" type="revolute">
+    <origin xyz="-0.00018259999342262745 0.10258079774693551 2.1484522284388643e-05" rpy="-1.5705868867979174 0 0" />
+    <parent link="wrist1_Link" />
+    <child link="wrist2_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="13.5" start_stop="34" velocity="4.136430327226561" />
+    <property inertia="0.15" damping="0" stiffness="0" offset="0" motor_constant="7.092" ratio="101" />
+  </joint>
+  <link name="wrist3_Link">
+    <inertial>
+      <origin xyz="0.000022 0.000600 -0.017081" rpy="0 0 0" />
+      <mass value="0.197800" />
+      <inertia ixx="0.000118" ixy="-0.000000" ixz="-0.000000" iyy="0.000112" iyz="0.000001" izz="0.000184" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/visual/link6.DAE" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/aubo_i5H/collision/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wrist3_joint" type="revolute">
+    <origin xyz="-0.00052750000031664968 -0.093999886849274114 -0.00014585034680827038" rpy="1.572347926851597 -0 -0" />
+    <parent link="wrist2_Link" />
+    <child link="wrist3_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="13.5" start_stop="34" velocity="4.136430327226561" />
+    <property inertia="0.15" damping="0" stiffness="0" offset="0" motor_constant="7.092" ratio="101" />
+  </joint>
+  <link name="tool0" />
+  <joint name="tool0_fixed" type="fixed">
+    <parent link="wrist3_Link" />
+    <child link="tool0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+</robot>

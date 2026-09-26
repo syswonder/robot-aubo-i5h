@@ -1,0 +1,28 @@
+manifestVersion: 1
+
+build: bash scripts/build.sh
+start: bash scripts/start.sh
+
+package:
+  name: "robonix.skill.wave"
+  version: 0.1.0
+  description: >
+    Wiggle each arm joint slightly to verify the manipulator is powered on,
+    connected, and responding to joint commands.
+  tags:
+    - skill
+    - robonix
+    - arm
+    - aubo
+    - diagnostics
+  maintainers:
+    - Yuzheng Gao <2300013159@stuu.pku.edu.cn>
+  license: Apache-2.0
+
+capabilities:
+  - name: robonix/skill/wave/wave
+    path: capabilities/wave.v1.toml
+
+depends:
+  - name: robonix/primitive/arm/joint_states
+  - name: robonix/primitive/arm/joint_command

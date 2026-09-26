@@ -1,0 +1,7 @@
+# Wiggle each joint by a small amount to verify the arm responds.
+# Request fields are optional strings; empty values use deployment defaults.
+string delta_deg        # amplitude per joint wiggle, in degrees (default 0.3)
+string settle_timeout_s # max seconds to wait for each motion (default 15)
+---
+bool ok
+string message

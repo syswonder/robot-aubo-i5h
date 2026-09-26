@@ -1,0 +1,37 @@
+catalog:
+  name: robonix.robot.aubo.i5h
+  version: 0.1.0
+  description: AUBO i5H deployment with an SDK arm primitive and optional wave skill.
+  tags: 
+    - robot
+    - deploy
+    - aubo
+    - i5h
+    - arm
+  maintainers:
+    - Yuzheng Gao <2300013159@stuu.pku.edu.cn>
+  license: Apache-2.0
+system:
+  atlas:
+    listen: 127.0.0.1:50051
+    log: info
+  soma:
+    robot_yaml: ./soma.yaml
+    log: info
+  vitals:
+    listen: 127.0.0.1:50093
+    log: info
+primitive:
+  - name: aubo_arm
+    path: ./primitives/aubo_arm
+    config:
+      endpoint: http://172.16.26.166:9012/jsonrpc
+      robot: rob1
+      expected_model: aubo_i5H
+      transport: sdk
+      motion_enabled: false
+      joint_names: [shoulder_joint, upperArm_joint, foreArm_joint, wrist1_joint, wrist2_joint, wrist3_joint]
+      poll_hz: 10.0
+      max_sample_age_s: 0.5
+service: []
+skill: []
