@@ -1,12 +1,15 @@
-manifestVersion: 1
-name: aubo-i5h-motion
 catalog:
   name: robonix.robot.aubo.i5h
   version: 0.1.0
   description: AUBO i5H deployment with an SDK arm primitive and optional wave skill.
-  license: MulanPSL-2.0
-  tags: [robot, deploy, aubo, i5h, arm]
-  maintainers: [] # Set to ["Name <email>"] before catalog submission.
+  tags: 
+    - robot
+    - deploy
+    - aubo
+    - i5h
+    - arm
+  maintainers:
+    - Yuzheng Gao <2300013159@stuu.pku.edu.cn>
 system:
   atlas:
     listen: 127.0.0.1:50051
