@@ -3,6 +3,8 @@
 AUBO i5H 的 Robonix 部署仓库，包含机械臂 primitive、wave skill、本体模型和部署清单。
 控制链路为 **Robonix → AUBO primitive → 官方 `pyaubo_sdk` → 控制柜**。
 
+![robot image](assets/robot.jpg)
+
 ## 环境
 
 - Ubuntu 22.04 x86_64、Python 3.10、ROS 2 Humble。
